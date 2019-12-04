@@ -3,6 +3,13 @@ cmake_minimum_required(VERSION 3.1)
 if(POLICY CMP0042)
   cmake_policy(SET CMP0042 NEW) # use MACOSX_RPATH
 endif()
+
+include("cmake/HunterGate.cmake")
+HunterGate(
+	URL "https://github.com/ruslo/hunter/archive/v0.23.51.tar.gz"
+	SHA1 "d6f582a4d127af6ac01d9be842636da3935043d4"
+)
+
 if(UNIX)
   project(cpprestsdk C CXX)
 else()

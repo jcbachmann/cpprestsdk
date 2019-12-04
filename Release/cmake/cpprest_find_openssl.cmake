@@ -41,6 +41,7 @@ function(cpprest_find_openssl)
       # This should prevent linking against the system provided 0.9.8y
       set(_OPENSSL_VERSION "")
     endif()
+    hunter_add_package(OpenSSL)
     find_package(OpenSSL 1.0.0 REQUIRED)
 
     INCLUDE(CheckCXXSourceCompiles)
