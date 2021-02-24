@@ -4,10 +4,14 @@ if(POLICY CMP0042)
   cmake_policy(SET CMP0042 NEW) # use MACOSX_RPATH
 endif()
 
+# The toolchain file is the only way to apply global settings for 3rd party projects in Hunter
+# see https://hunter.readthedocs.io/en/latest/overview/customization/toolchain-id.html
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_LIST_DIR}/cmake/toolchain.cmake")
+
 include("cmake/HunterGate.cmake")
 HunterGate(
-	URL "https://github.com/ruslo/hunter/archive/v0.23.51.tar.gz"
-	SHA1 "d6f582a4d127af6ac01d9be842636da3935043d4"
+    URL "https://github.com/cpp-pm/hunter/archive/v0.23.295.tar.gz"
+    SHA1 "8a3447594fa5948cc7c6888dd86a9e823259c69f"
 )
 
 if(UNIX)
